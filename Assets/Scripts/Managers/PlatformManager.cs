@@ -24,6 +24,8 @@ public class PlatformManager : Singleton<PlatformManager>
      private void Start()
      {
         StartDecrease();
+        EventManager.Instance.OnFail.AddListener(StopDecrease);
+        EventManager.Instance.OnWin.AddListener(StopDecrease);
      }
 
      private void SetLocalScale()
@@ -43,6 +45,11 @@ public class PlatformManager : Singleton<PlatformManager>
      public void StartDecrease()
      {
          _coroutine = StartCoroutine(DecreasePlace());
+     }
+
+     private void StopDecrease()
+     {
+         StopCoroutine(_coroutine);
      }
 
      IEnumerator DecreasePlace()

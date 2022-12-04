@@ -16,7 +16,7 @@ using UnityEngine;
      {
          moveState = GetComponent<MovementControl>();
          crashState = GetComponent<CrashControl>();
-         killState = GetComponent<MovementControl>();
+         killState = GetComponent<KillControl>();
          state = moveState;
      }
 

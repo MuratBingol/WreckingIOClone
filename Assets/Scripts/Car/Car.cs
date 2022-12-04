@@ -14,6 +14,11 @@ using UnityEngine;
          _state = GetComponent<CarStateControl>();
      }
 
+     private void Start()
+     {
+         EventManager.Instance.OnWin.AddListener(BeHappy);
+     }
+
      public void TakeDamage(Collision collision)
      {
         _state.SetNewState(_state.crashState);
@@ -22,12 +27,12 @@ using UnityEngine;
 
      public void BeHappy()
      {
-       
+       _state.SetNewState(null);
      }
 
      public void BeSad()
      {
-         throw new System.NotImplementedException();
+         
      }
 
      public Rod GetRod()
