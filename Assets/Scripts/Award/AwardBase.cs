@@ -7,9 +7,9 @@ using UnityEngine;
  {
      
      protected abstract void GiveAward(ICar car);
-     [SerializeField] private GameObject _awardBox;
+     [SerializeField] protected GameObject _awardBox;
      [SerializeField] private ParticleSystem _particle;
-     private Collider _collider;
+     protected Collider _collider;
 
      private void Awake()
      {
@@ -24,6 +24,11 @@ using UnityEngine;
              ICar car = other.GetComponent<ICar>();
              GiveAward(car);
              CloseAwardBox();
+         }
+
+         if (other.CompareTag("FailZone"))
+         {
+             gameObject.SetActive(false);
          }
      }
 

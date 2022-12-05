@@ -6,6 +6,7 @@ using UnityEngine;
  {
      private Collider _collider;
      private MeshRenderer _renderer;
+     [SerializeField] private AudioSource _hitSound;
 
      protected override void Awake()
      {
@@ -17,6 +18,8 @@ using UnityEngine;
      protected override void Damage(ICar car,Collision collision)
      {
         car.TakeDamage(collision);
+        _hitSound.Stop();
+        _hitSound.Play();
      }
 
      public void CloseBall()

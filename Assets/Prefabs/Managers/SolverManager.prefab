@@ -131,7 +131,7 @@ MonoBehaviour:
   stretchShearConstraintParameters:
     evaluationOrder: 0
     iterations: 1
-    SORFactor: 1
+    SORFactor: 0.29
     enabled: 1
   bendTwistConstraintParameters:
     evaluationOrder: 0

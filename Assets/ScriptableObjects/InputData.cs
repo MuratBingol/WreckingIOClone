@@ -8,6 +8,7 @@ using UnityEngine;
  {
      public float moveSpeed;
      public float rotateSpeed;
+     public float tapRotateSpeed;
      public Vector3 direction;
  }
 

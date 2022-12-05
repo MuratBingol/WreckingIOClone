@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
- public class AIManager : Singleton<AIManager>
+
+public class AIManager : Singleton<AIManager>
  {
      private List<ICar> Cars = new List<ICar>();
-
-
+   
+     
      public void SetAI(ICar car)
      {
          Cars.Add(car);

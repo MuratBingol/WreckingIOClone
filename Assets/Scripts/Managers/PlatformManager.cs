@@ -12,6 +12,7 @@ public class PlatformManager : Singleton<PlatformManager>
      
      [SerializeField] private float _decreasePercent;
      [SerializeField] private GameObject _paltformPrefab;
+     [SerializeField] private GameObject _winParticle;
      [SerializeField] private float _waitTime;
      
 
@@ -51,6 +52,7 @@ public class PlatformManager : Singleton<PlatformManager>
      {
          StopCoroutine(_coroutine);
      }
+     
 
      IEnumerator DecreasePlace()
      {

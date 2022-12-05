@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public abstract class MovementControl : Control
- {
-    
+{
+    [SerializeField] protected InputData _inputData;
      private void FixedUpdate()
      {
          if (_stateControl.CurrentState!=_state) return;

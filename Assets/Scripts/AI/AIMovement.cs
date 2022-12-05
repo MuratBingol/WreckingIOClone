@@ -5,8 +5,6 @@ using UnityEngine;
 
  public class AIMovement : MovementControl
  {
-     [SerializeField] private float _speed;
-     [SerializeField] private float _rotateSpeed;
      [SerializeField] private Vector3 _target;
 
 
@@ -23,13 +21,13 @@ using UnityEngine;
      protected override void Move()
      {
          if (Vector3.Distance(transform.position,_target)<1f) { SetNewTarget(); }
-         _rigidbody.MovePosition(transform.position+transform.forward*Time.deltaTime*_speed);
+         _rigidbody.MovePosition(transform.position+transform.forward*Time.deltaTime*_inputData.moveSpeed);
      }
 
      protected override void Rotate()
      {
          Quaternion toRotate = Quaternion.LookRotation(_target-transform.position, Vector3.up);
-         _rigidbody.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, _rotateSpeed * Time.fixedDeltaTime);
+         _rigidbody.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, _inputData.rotateSpeed * Time.fixedDeltaTime);
      }
  }
 
