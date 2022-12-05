@@ -6,11 +6,15 @@ using UnityEngine;
 
  public class CameraControl : MonoBehaviour
  {
-     private CinemachineVirtualCamera _virtualCamera;
+   
+     [SerializeField] private Transform _player;
+     [SerializeField] private Vector3 _offset;
+     [SerializeField] private Camera _camera;
 
      private void Awake()
      {
-         _virtualCamera = GetComponent<CinemachineVirtualCamera>();
+         _camera=Camera.main;;
+         _offset = _camera.transform.position - _player.position;
      }
 
      private void Start()
@@ -19,10 +23,15 @@ using UnityEngine;
         EventManager.Instance.OnWin.AddListener(BreakFollow);
      }
 
+     private void Update()
+     {
+         
+         _camera.transform.position = _offset + _player.position;
+     }
+
      private void BreakFollow()
      {
-         _virtualCamera.m_Follow = null;
-         _virtualCamera.m_LookAt = null;
+        Destroy(this);
      }
  }
 

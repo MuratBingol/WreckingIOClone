@@ -67,7 +67,7 @@ public class PlatformManager : Singleton<PlatformManager>
          _platformDestroy.transform.localPosition-=Vector3.up*0.01f;
          GameObject newPlatform =Instantiate(_paltformPrefab, pos, Quaternion.identity,transform);
          newPlatform.transform.SetSiblingIndex(0);
-         newPlatform.transform.localScale = new Vector3(localScale*2 * _decreasePercent, 1, localScale*2 * _decreasePercent);
+         newPlatform.transform.localScale = new Vector3((localScale + 3)*2 * _decreasePercent, 1, (localScale + 3)*2*_decreasePercent);
          SetLocalScale();
          StartDecrease();
      }

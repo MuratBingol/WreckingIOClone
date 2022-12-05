@@ -15,6 +15,16 @@ using UnityEngine;
          _animator.SetFloat("Speed",_speed);
      }
 
+     private void Start()
+     {
+         EventManager.Instance.OnFail.AddListener(Close);
+     }
+
+     private void Close()
+     {
+         gameObject.SetActive(false);
+     }
+
      private void Update()
      {
          FollowPlayer();

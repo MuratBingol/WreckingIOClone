@@ -734,8 +734,6 @@ struct CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705;
 struct CinemachinePathBase_t9BA180040D1DA9F876C41BC313973F3A24EE7B8D;
 // Cinemachine.CinemachineTargetGroup
 struct CinemachineTargetGroup_tDA10E4AFC0E3489DA38592948CD48D8CAFC3B1EF;
-// Cinemachine.CinemachineVirtualCamera
-struct CinemachineVirtualCamera_t7BAD867E24FA315D28917EE318CE7D7258C4CD50;
 // Cinemachine.CinemachineVirtualCameraBase
 struct CinemachineVirtualCameraBase_tAD070AA799E9D3990F0B2DA9AC5889CF138261DE;
 // UnityEngine.Collider
@@ -25190,8 +25188,12 @@ struct Blinker_t62BD6C8133C680CC339318F48CE89969EB26B7B4  : public MonoBehaviour
 // CameraControl
 struct CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// Cinemachine.CinemachineVirtualCamera CameraControl::_virtualCamera
-	CinemachineVirtualCamera_t7BAD867E24FA315D28917EE318CE7D7258C4CD50* ____virtualCamera_4;
+	// UnityEngine.Transform CameraControl::_player
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____player_4;
+	// UnityEngine.Vector3 CameraControl::_offset
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____offset_5;
+	// UnityEngine.Camera CameraControl::_camera
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____camera_6;
 };
 
 // Assets.MobileOptimizedWater.Scripts.CameraDepthSlider
@@ -31816,9 +31818,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4751[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4752[2] = 
 {
 	static_cast<int32_t>(offsetof(WaterKillControl_tABC7001490F31B23B751FDB6E8DC5A355AE3072C, ____particle_4)),static_cast<int32_t>(offsetof(WaterKillControl_tABC7001490F31B23B751FDB6E8DC5A355AE3072C, ____waterSound_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4753[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4753[3] = 
 {
-	static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ____virtualCamera_4)),};
+	static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ____player_4)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ____offset_5)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ____camera_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4754[3] = 
 {
 	static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ____tapDelay_8)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ____cam_9)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ____target_10)),};
