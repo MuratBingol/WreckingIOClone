@@ -46,7 +46,9 @@ using UnityEngine;
 
      private void StopDestroy()
      {
+         StopAllCoroutines();
          _rigidbody.isKinematic = true;
+         
      }
      
      
